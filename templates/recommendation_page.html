@@ -1,0 +1,23 @@
+{% extends "template_headers.html" %}
+{% block conteudo %}
+    <table class="table table-striped table-responsive table-bordered">
+        <thead>
+            <tr>
+                <th>MovieId</th>
+                <th>Movie</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for i in range(0,movies|length) %}
+                        <tr>
+                            <td>{{ ids[i] }}</td>
+                            <td>{{ movies[i] }}</td>
+                        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+
+    <a href="{{url_for('home')}}">Go back</a>
+{% endblock %}

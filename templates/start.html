@@ -1,0 +1,58 @@
+{% extends "initial_template.html" %}
+{% block conteudo %}
+
+<div class="container">
+    <div class="post">
+        <div class="text"><p>Include your ratings below. Use 0 only for movies you haven't seem yet.</p></div>
+    </div>
+    <form action="{{ url_for('create') }}" method="post">
+        <div class="star-widget">
+            <table class="table table-striped table-responsive table-bordered" style="width: 60%; margin-left: auto; margin-right: auto;">
+                <tbody>
+                    <tr>
+                        <td>Movies</td>
+                        <td>Rating</td>
+                    </tr>
+                    {% for i in range(1, movies|length+1) %}
+                    <tr>
+                        <td ><p>{{movies[i-1]}}</p><img src="{{links[i-1]}}" alt="Image not found" width="400" height="600"></td>
+                        <td>
+                            <!-- <div class="ratings-container"> -->
+                                <div><label for="{{'rate-' ~ i ~ '0'}}"><input id="{{'rate-' ~ i ~ '0'}}" name="{{'movie-' ~ i}}" type="radio"
+                                    value="0"   checked="checked"/>Not seen</label></div>
+                                    <div><label for="{{'rate-' ~ i ~ '1'}}"><input id="{{'rate-' ~ i ~ '1'}}" name="{{'movie-' ~ i}}" type="radio"
+                                    value="1" />1</label></div> 
+                                    <div><label for="{{'rate-' ~ i ~ '2'}}"><input id="{{'rate-' ~ i ~ '2'}}" name="{{'movie-' ~ i}}" type="radio"
+                                    value="2" />2</label></div>
+                                    <div><label for="{{'rate-' ~ i ~ '3'}}"><input id="{{'rate-' ~ i ~ '3'}}" name="{{'movie-' ~ i}}" type="radio"
+                                    value="3" />3</label></div>
+                                    <div><label for="{{'rate-' ~ i ~ '4'}}"><input id="{{'rate-' ~ i ~ '4'}}" name="{{'movie-' ~ i}}" type="radio"
+                                    value="4" />4</label></div>
+                                    <div><label for="{{'rate-' ~ i ~ '5'}}"><input id="{{'rate-' ~ i ~ '5'}}" name="{{'movie-' ~ i}}" type="radio"
+                                    value="5" />5</label></div>
+                                    <div><label for="{{'rate-' ~ i ~ '6'}}"><input id="{{'rate-' ~ i ~ '6'}}" name="{{'movie-' ~ i}}" type="radio"
+                                    value="6" />6</label></div>
+                                    <div><label for="{{'rate-' ~ i ~ '7'}}"><input id="{{'rate-' ~ i ~ '7'}}" name="{{'movie-' ~ i}}" type="radio"
+                                    value="7" />7</label></div>
+                                    <div><label for="{{'rate-' ~ i ~ '8'}}"><input id="{{'rate-' ~ i ~ '8'}}" name="{{'movie-' ~ i}}" type="radio"
+                                    value="8" />8</label></div>
+                                    <div><label for="{{'rate-' ~ i ~ '9'}}"><input id="{{'rate-' ~ i ~ '9'}}" name="{{'movie-' ~ i}}" type="radio"
+                                    value="9" />9</label></div>
+                                    <div><label for="{{'rate-' ~ i ~ '10'}}"><input id="{{'rate-' ~ i ~ '10'}}" name="{{'movie-' ~ i}}" type="radio"
+                                    value="10" />10</label></div>
+                            <!-- </div> -->
+                        </td>
+                    </tr>
+                    {% endfor %}
+            </table>
+
+            <header></header>
+            <div class="btn">
+                <button type="submit">Save</button>
+            </div>
+            
+        </div>
+    </form>
+</div>
+{% endblock %}
+

@@ -1,0 +1,67 @@
+{% extends "template_headers.html" %}
+{% block conteudo %}
+ 
+
+<p>In order to get recommendations, select an option from the navigation menu above.</p>
+
+
+<ul>
+    <li><a href="#top rated">Top Rated</a></li>
+    <li><a href="#indies">Indies</a></li>
+    <li><a href="#bubble">Bubble</a></li>
+    <li><a href="#border">Border</a></li>
+    <li><a href="#smart">Smart</a></li>
+</ul>
+
+
+
+<br>
+
+<h2 id="top rated">Top Rated</h2> 
+
+<p>Check the top rated movies in the database you haven't seen yet.</p>
+
+<h2 id="indies">Indies</h2> 
+
+<p>Check some less known movies with high ratings.</p>
+
+<h2 id="bubble">Bubble</h2> 
+
+<p>This recommender will return the movies best rated by users like you.</p>
+
+<h2 id="border">Border</h2> 
+
+<p>Expand your movie bubble, by checking the movies only a few of the users close to you have seen.</p>
+
+<h2 id="smart">Smart</h2> 
+
+<p>This algorithm is smart but slow, so please wait a minute while math is being done.</p>
+
+<br>
+
+<h2>Your movie ratings.</h2> 
+
+<a href="{{url_for('add')}}">Add a new rating.</a>
+
+<p>
+
+<table class="table table-striped table-responsive table-bordered">
+        <thead>
+            <tr>
+                <th>Movies</th>
+                <th>Ratings</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for i in range(0,ratings|length) %}
+                        <tr>
+                            <td>{{ movies[i] }}</td>
+                            <td>{{ ratings[i] }}</td>
+                        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+    
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends "initial_template.html" %}
+{% block conteudo %}
+
+<h1> Movies Recommendation Systems </h1>
+
+
+<p>Welcome to this <b>Recommendation Systems</b> project!</p>
+
+
+<ol>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#tools">Tools and Features</a></li>
+    <li><a href="#next steps">Next steps</a></li>
+
+</ol>
+
+
+
+<br>
+
+<h2 id="introduction">Introduction</h2> 
+
+<br>
+
+<p>This project contains different recommendation systems for you to find your next favourite movie. We have used the MovieLens data available at the <a href="https://grouplens.org/datasets/movielens/">GroupLens</a> website. The current version of the project uses the smallest database.</p>
+
+
+<br>
+
+<h2 id="tools">Tools and Features</h2> 
+
+<br>
+
+<p>This project was initially developed using Jupyter notebook.</p> 
+
+<ul>
+    <li>Python 3.8</li>
+    <li>Pandas 1.3.4</li>
+    <li>Numpy 1.21.4</li>
+</ul> 
+
+<p>The current available recommenders use the following algorithms:</p>
+
+<ul>
+    <li>Modified K-Nearest Neighbors</li>
+    <li>Stochastic Gradient Descent</li>
+</ul> 
+
+<br>
+
+<h2 id="next steps">Next steps</h2> 
+
+<br>
+
+<p>Next steps for this project include: </p>
+
+<ul>
+    <li>Create web app in Flask/Django to allow general public use.</li>
+    <li>Develop a content based recommender.</li>
+    <li>Include regularization in the gradient descent algorithms.</li>
+    <li>Expand the database.</li>
+</ul>
+
+
+
+    <a href="{{url_for('start')}}">Start here</a>
+
+{% endblock %}

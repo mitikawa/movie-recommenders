@@ -1,0 +1,36 @@
+{% extends "template_headers.html" %}
+{% block conteudo %}
+ 
+
+<form action="{{ url_for('add_to_user') }}" id="add_rating_form" method="post">
+
+<label for="movies">Choose a movie to add rating:</label>
+
+<select name="movies" id="movies_selection">
+    {% for i in range(0, allMovieIds|length) %}
+        <option value="{{allMovieIds[i]}}">{{allMovieNames[i]}} [{{allMovieIds[i]}}]</option>
+    {% endfor %}
+</select>
+
+
+<label for="ratings">Choose rating:</label>
+<select name="ratings" id="ratings_selection">
+    {% for i in range(1, 11) %}
+        <option value="{{i}}">{{i}}</option>
+    {% endfor %}
+</select>
+
+<div class="btn">
+    <button type="submit">Save</button>
+</div>
+</form>
+
+
+
+
+
+
+
+
+
+{% endblock %}
